@@ -57,7 +57,8 @@ int xdp_icmp_echo_func(struct xdp_md *ctx)
 	int icmp_type;
 	struct iphdr *iphdr;
 	struct ipv6hdr *ipv6hdr;
-	__u16 echo_reply;
+	__u16 echo_reply = 0;
+    echo_reply++;
 	struct icmphdr_common *icmphdr;
 	__u32 action = XDP_PASS;
 
